@@ -34,6 +34,7 @@ class BypassListManagement implements \JsonSerializable
      * Optional constructor
      *
      * @param bool|null $enable Indicates if this setting is enabled
+     * @throws TypeException
      */
     public function __construct($enable = null)
     {
@@ -46,9 +47,9 @@ class BypassListManagement implements \JsonSerializable
      * Update the enable setting on a BypassListManagement object
      *
      * @param bool $enable Indicates if this setting is enabled
-     * 
+     *
      * @throws TypeException
-     */ 
+     */
     public function setEnable($enable)
     {
         if (!is_bool($enable)) {

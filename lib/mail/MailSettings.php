@@ -44,6 +44,7 @@ class MailSettings implements \JsonSerializable
      * @param Footer|null $footer Footer object
      * @param SandBoxMode|null $sandbox_mode SandBoxMode object
      * @param SpamCheck|null $spam_check SpamCheck object
+     * @throws TypeException
      */
     public function __construct(
         $bcc_settings = null,
@@ -76,9 +77,9 @@ class MailSettings implements \JsonSerializable
      *                                 if the setting is enabled
      * @param string|null $email The email address that you would like
      *                                 to receive the BCC
-     * 
+     *
      * @throws TypeException
-     */ 
+     */
     public function setBccSettings($enable, $email = null)
     {
         if ($enable instanceof BccSettings) {
@@ -110,7 +111,7 @@ class MailSettings implements \JsonSerializable
      * @param BypassListManagement|bool $enable The BypassListManagement
      *                                          object or an indication
      *                                          if the setting is enabled
-     * 
+     *
      * @throws TypeException
      */
     public function setBypassListManagement($enable)
@@ -148,6 +149,7 @@ class MailSettings implements \JsonSerializable
      * @param string|null $html The HTML content of your footer
      *
      * @return null
+     * @throws TypeException
      */
     public function setFooter($enable, $text = null, $html = null)
     {
@@ -177,6 +179,7 @@ class MailSettings implements \JsonSerializable
      *                                 indication if the setting is enabled
      *
      * @return null
+     * @throws TypeException
      */
     public function setSandboxMode($enable)
     {
@@ -229,6 +232,7 @@ class MailSettings implements \JsonSerializable
      *                                    report to be sent to
      *
      * @return null
+     * @throws TypeException
      */
     public function setSpamCheck($enable, $threshold = null, $post_to_url = null)
     {

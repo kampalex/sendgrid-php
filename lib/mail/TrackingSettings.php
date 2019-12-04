@@ -39,6 +39,7 @@ class TrackingSettings implements \JsonSerializable
      * @param SubscriptionTracking|null $subscription_tracking SubscriptionTracking
      *                                                         object
      * @param Ganalytics|null $ganalytics Ganalytics object
+     * @throws TypeException
      */
     public function __construct(
         $click_tracking = null,
@@ -69,6 +70,7 @@ class TrackingSettings implements \JsonSerializable
      * @param bool|null $enable_text Indicates if this setting should be
      *                                        included in the text/plain portion of
      *                                        your email
+     * @throws TypeException
      */
     public function setClickTracking($enable, $enable_text = null)
     {
@@ -104,6 +106,7 @@ class TrackingSettings implements \JsonSerializable
      *                                            the open tracking pixelail
      *
      * @return null
+     * @throws TypeException
      */
     public function setOpenTracking($enable, $substitution_tag = null)
     {
@@ -156,6 +159,7 @@ class TrackingSettings implements \JsonSerializable
      *                                                    placed at the substitution
      *                                                    tag’s location, with no
      *                                                    additional formatting
+     * @throws TypeException
      */
     public function setSubscriptionTracking(
         $enable,
@@ -196,6 +200,7 @@ class TrackingSettings implements \JsonSerializable
      * @param string|null $utm_content Used to differentiate your campaign from
      *                                      advertisements
      * @param string|null $utm_campaign The name of the campaign
+     * @throws TypeException
      */
     public function setGanalytics(
         $enable,

@@ -43,6 +43,7 @@ class Asm implements \JsonSerializable
      *                                                      to be displayed
      *                                                      on the unsubscribe
      *                                                      preferences page.
+     * @throws TypeException
      */
     public function __construct(
         $group_id = null,

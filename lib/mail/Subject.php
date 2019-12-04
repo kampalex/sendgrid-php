@@ -28,6 +28,7 @@ class Subject implements \JsonSerializable
      * Optional constructor
      *
      * @param string|null $subject The email subject
+     * @throws TypeException
      */
     public function __construct($subject = null)
     {
@@ -40,9 +41,9 @@ class Subject implements \JsonSerializable
      * Set the subject on a Subject object
      *
      * @param string $subject The email subject
-     * 
+     *
      * @throws TypeException
-     */ 
+     */
     public function setSubject($subject)
     {
         if (!is_string($subject)) {

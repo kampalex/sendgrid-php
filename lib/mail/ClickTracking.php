@@ -33,6 +33,7 @@ class ClickTracking implements \JsonSerializable
      * @param bool|null $enable_text Indicates if this setting should be
      *                               included in the text/plain portion of
      *                               your email
+     * @throws TypeException
      */
     public function __construct($enable = null, $enable_text = null)
     {
@@ -48,9 +49,9 @@ class ClickTracking implements \JsonSerializable
      * Update the enable setting on a ClickTracking object
      *
      * @param bool $enable Indicates if this setting is enabled
-     * 
+     *
      * @throws TypeException
-     */ 
+     */
     public function setEnable($enable)
     {
         if (!is_bool($enable)) {
@@ -73,9 +74,9 @@ class ClickTracking implements \JsonSerializable
      * Update the enable text setting on a ClickTracking object
      *
      * @param bool $enable_text Indicates if this setting is enabled
-     * 
+     *
      * @throws TypeException
-     */ 
+     */
     public function setEnableText($enable_text)
     {
         if (!is_bool($enable_text)) {
