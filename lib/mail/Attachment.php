@@ -29,7 +29,7 @@ class Attachment implements \JsonSerializable
     private $filename;
     /** @var $disposition string How the attachment should be displayed: inline or attachment, default is attachment */
     private $disposition;
-    /** @var $content_id string Used when disposition is inline to diplay the file within the body of the email */
+    /** @var $content_id string Used when disposition is inline to display the file within the body of the email */
     private $content_id;
 
     /**
@@ -40,7 +40,7 @@ class Attachment implements \JsonSerializable
      * @param string $filename File name of the attachment
      * @param string $disposition How the attachment should be displayed: inline
      *                            or attachment, default is attachment
-     * @param string $content_id Used when disposition is inline to diplay the
+     * @param string $content_id Used when disposition is inline to display the
      *                            file within the body of the email
      * @throws TypeException
      */
@@ -176,7 +176,7 @@ class Attachment implements \JsonSerializable
     /**
      * Add the content id to a Attachment object
      *
-     * @param string $content_id Used when disposition is inline to diplay
+     * @param string $content_id Used when disposition is inline to display
      *                           the file within the body of the email
      * @throws TypeException
      */

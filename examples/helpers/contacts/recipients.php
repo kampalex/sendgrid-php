@@ -4,7 +4,7 @@ namespace SendGrid;
 // If you are using Composer
 require __DIR__ . '<PATH_TO>/vendor/autoload.php';
 // comment out the above line if not using Composer
-// require("./sendgrid-php.php"); 
+// require("./sendgrid-php.php");
 // If not using Composer, uncomment the above line
 
 // This will build an HTML form to be embedded in your page. This form allows users to subscribe using their name and email.
@@ -41,20 +41,16 @@ function recipientFormSubmit()
         }
     ]'
     );
-    
+
     try {
-        $response = $sg->client->contactdb()->recipients()->post($request_body);    
+        $response = $sg->client->contactdb()->recipients()->post($request_body);
         print $response->statusCode() . "\n";
         print_r($response->headers());
         print $response->body() . "\n";
-    } catch (Exception $e) {
+    } catch (\Exception $e) {
         echo 'Caught exception: ',  $e->getMessage(), "\n";
     }
 }
 
 buildRecipientForm(); // This will build and output an HTML form
 recipientFormSubmit(); // This will simulate a form submission and will output the response.
-
-?>
-
-

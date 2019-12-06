@@ -158,7 +158,7 @@ class Personalization implements \JsonSerializable
      *
      * @param Substitution|string $data DynamicTemplateData object or the key of a
      *                                  dynamic data
-     * @param string|null $value The value of dynmic data
+     * @param string|null $value The value of dynamic data
      *
      * @return null
      * @throws TypeException
@@ -198,7 +198,7 @@ class Personalization implements \JsonSerializable
     /**
      * Retrieve substitution key/value pairs from a Personalization object
      *
-     * @return array
+     * @return Substitution[]
      */
     public function getSubstitutions()
     {

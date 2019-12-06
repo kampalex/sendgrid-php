@@ -205,6 +205,7 @@ class Mail implements \JsonSerializable
                 $substitutions
             );
         }
+        /** @var EmailAddress $email */
         if ($personalization != null) {
             $personalization->$personalizationFunctionCall($email);
             if ($subs = $email->getSubstitutions()) {
@@ -674,8 +675,7 @@ class Mail implements \JsonSerializable
     /**
      * Add a DynamicTemplateData object or key/value to a Personalization object
      *
-     * @param DynamicTemplateData|string $data DynamicTemplateData object or the key of a
-     *                                         dynamic data
+     * @param Substitution|string $key Substitution object or the key of a dynamic data
      * @param string|null $value Value
      * @param int|null $personalizationIndex Index into an array of
      *                                       existing Personalization
@@ -696,7 +696,7 @@ class Mail implements \JsonSerializable
     /**
      * Add a DynamicTemplateData object or key/value to a Personalization object
      *
-     * @param array|DynamicTemplateData[] $data Array of DynamicTemplateData objects or key/values
+     * @param array|Substitution[] $datas Array of Substitution objects or key/values
      * @param int|null $personalizationIndex Index into an array of
      *                                       existing Personalization
      *                                       objects
@@ -719,7 +719,7 @@ class Mail implements \JsonSerializable
      *                                    existing Personalization
      *                                    objects
      *
-     * @return array
+     * @return Substitution[]
      */
     public function getDynamicTemplateDatas($personalizationIndex = 0)
     {
@@ -796,7 +796,7 @@ class Mail implements \JsonSerializable
      *                                       existing Personalization
      *                                       objects
      * @param Personalization|null $personalization A pre-created
-     *                                              ersonalization object
+     *                                              personalization object
      * @throws TypeException
      */
     public function addSubstitutions(
@@ -1018,7 +1018,6 @@ class Mail implements \JsonSerializable
         if ($email instanceof From) {
             $this->from = $email;
         } else {
-
             if (
                 is_string($email) && filter_var($email, FILTER_VALIDATE_EMAIL)
             ) {
@@ -1179,7 +1178,7 @@ class Mail implements \JsonSerializable
      *                                       displayed: inline or attachment
      *                                       default is attachment
      * @param string|null $content_id Used when disposition is inline
-     *                                       to diplay the file within the
+     *                                       to display the file within the
      *                                       body of the email
      * @throws TypeException
      */
@@ -1238,7 +1237,7 @@ class Mail implements \JsonSerializable
      * Add a template id to a Mail object
      *
      * @param string $template_id The id of the template to be
-     *                            appied to this email
+     *                            applied to this email
      * @throws TypeException
      */
     public function setTemplateId($template_id)
@@ -1880,7 +1879,7 @@ class Mail implements \JsonSerializable
     }
 
     /**
-     * Set the Google anatlyics settings on a TrackingSettings object
+     * Set the Google analytics settings on a TrackingSettings object
      *
      * @param bool|Ganalytics $enable A Ganalytics object or a boolean to
      *                                      determine if this setting
@@ -1940,6 +1939,7 @@ class Mail implements \JsonSerializable
                 'personalizations' => array_values(array_filter(
                     $this->getPersonalizations(),
                     function ($value) {
+                        /** @var Personalization $value */
                         return null !== $value && null !== $value->jsonSerialize();
                     }
                 )),

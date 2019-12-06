@@ -5,7 +5,6 @@
  *
  * PHP Version - 5.6, 7.0, 7.1, 7.2
  *
- * @package   SendGrid\Tests
  * @author    Elmer Thomas <dx@sendgrid.com>
  * @copyright 2018-19 Twilio SendGrid
  * @license   https://opensource.org/licenses/MIT The MIT License
@@ -13,21 +12,24 @@
  * @link      http://packagist.org/packages/sendgrid/sendgrid
  */
 
+use SendGrid\Client;
+use SendGrid\Mail\Mail;
+use SendGrid\Response;
+
+
 /**
  * This class is the interface to the Twilio SendGrid Web API
- *
- * @package SendGrid\Mail
  */
 class SendGrid
 {
     const VERSION = '7.3.0';
 
-    // @var string
+    /** @var string Namespace */
     protected $namespace = 'SendGrid';
 
-    // @var \SendGrid\Client
+    /** @var Client Client */
     public $client;
-    // @var string
+    /** @var string Version */
     public $version = self::VERSION;
 
     /**
@@ -54,7 +56,7 @@ class SendGrid
 
         $curlOptions = isset($options['curl']) ? $options['curl'] : null;
 
-        $this->client = new \SendGrid\Client(
+        $this->client = new Client(
             $host,
             $headers,
             '/v3',
@@ -66,11 +68,11 @@ class SendGrid
     /**
      * Make an API request
      *
-     * @param \SendGrid\Mail\Mail $email A Mail object, containing the request object
+     * @param Mail $email A Mail object, containing the request object
      *
-     * @return \SendGrid\Response
+     * @return Response
      */
-    public function send(\SendGrid\Mail\Mail $email)
+    public function send(Mail $email)
     {
         return $this->client->mail()->send()->post($email);
     }

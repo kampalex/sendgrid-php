@@ -4,7 +4,7 @@ namespace SendGrid;
 // If you are using Composer
 require __DIR__ . '/../../../vendor/autoload.php';
 // comment out the above line if not using Composer
-// require("./sendgrid-php.php"); 
+// require("./sendgrid-php.php");
 // If not using Composer, uncomment the above line
 
 use SendGrid\Mail\To;
@@ -210,13 +210,13 @@ function sendHelloEmail()
     $sg = new \SendGrid($apiKey);
 
     $request_body = helloEmail();
-    
+
     try {
-        $response = $sg->client->mail()->send()->post($request_body);    
+        $response = $sg->client->mail()->send()->post($request_body);
         print $response->statusCode() . "\n";
         print_r($response->headers());
         print $response->body() . "\n";
-    } catch (Exception $e) {
+    } catch (\Exception $e) {
         echo 'Caught exception: ',  $e->getMessage(), "\n";
     }
 }
@@ -227,19 +227,16 @@ function sendKitchenSink()
     $sg = new \SendGrid($apiKey);
 
     $request_body = kitchenSink();
-    
+
     try {
-        $response = $sg->client->mail()->send()->post($request_body);    
+        $response = $sg->client->mail()->send()->post($request_body);
         print $response->statusCode() . "\n";
         print_r($response->headers());
         print $response->body() . "\n";
-    } catch (Exception $e) {
+    } catch (\Exception $e) {
         echo 'Caught exception: ',  $e->getMessage(), "\n";
     }
 }
 
 sendHelloEmail();  // this will actually send an email
 sendKitchenSink(); // this will only send an email if you set SandBox Mode to false
-?>
-
-

@@ -126,13 +126,13 @@ class EmailAddress implements \JsonSerializable
             Double quotes will be shown in some email clients, so the name should
             only be wrapped when necessary.
         */
-        // Only wrapp in double quote if comma or semicolon are found
+        // Only wrap in double quote if comma or semicolon are found
         if (false !== strpos($name, ',') || false !== strpos($name, ';')) {
             // Unescape quotes
             $name = stripslashes(html_entity_decode($name, ENT_QUOTES));
             // Escape only double quotes
             $name = str_replace('"', '\\"', $name);
-            // Wrapp in double quotes
+            // Wrap in double quotes
             $name = '"' . $name . '"';
         }
         $this->name = (!empty($name)) ? $name : null;

@@ -6,7 +6,7 @@ require __DIR__ . '/../../../vendor/autoload.php';
 $apiKey = getenv('SENDGRID_API_KEY');
 $sg = new \SendGrid($apiKey);
 
-$stats = new \SendGrid\Stats('2017-10-18');
+$stats = new \SendGrid\Stats\Stats('2017-10-18');
 
 //$response = $sg->client->categories()->post(['category' => 'cat2']);
 //$response = $sg->client->categories()->get(null, $query_params);

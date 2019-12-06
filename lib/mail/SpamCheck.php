@@ -30,7 +30,7 @@ class SpamCheck implements \JsonSerializable
      */
     private $threshold;
     /**
-     * @var $post_to_urlstring An Inbound Parse URL that you would like a copy of your
+     * @var $post_to_url string An Inbound Parse URL that you would like a copy of your
      * email along with the spam report to be sent to
      */
     private $post_to_url;
