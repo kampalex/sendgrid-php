@@ -1,7 +1,7 @@
 <?php
 require 'vendor/autoload.php'; // If you're using Composer (recommended)
 // comment out the above line if not using Composer
-// require("./sendgrid-php.php"); 
+// require("./lib/loader.php");
 // If not using Composer, uncomment the above line
 
 
@@ -31,10 +31,10 @@ $request_body = json_decode('{
   "ips": [
     {
       "ip": "192.168.1.1"
-    }, 
+    },
     {
       "ip": "192.*.*.*"
-    }, 
+    },
     {
       "ip": "192.168.1.3/32"
     }

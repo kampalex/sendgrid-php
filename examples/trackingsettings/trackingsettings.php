@@ -1,7 +1,7 @@
 <?php
 require 'vendor/autoload.php'; // If you're using Composer (recommended)
 // comment out the above line if not using Composer
-// require("./sendgrid-php.php"); 
+// require("./lib/loader.php");
 // If not using Composer, uncomment the above line
 
 $apiKey = getenv('SENDGRID_API_KEY');
@@ -57,11 +57,11 @@ try {
 // PATCH /tracking_settings/google_analytics #
 
 $request_body = json_decode('{
-  "enabled": true, 
-  "utm_campaign": "website", 
-  "utm_content": "", 
-  "utm_medium": "email", 
-  "utm_source": "sendgrid.com", 
+  "enabled": true,
+  "utm_campaign": "website",
+  "utm_content": "",
+  "utm_medium": "email",
+  "utm_source": "sendgrid.com",
   "utm_term": ""
 }');
 
@@ -122,11 +122,11 @@ try {
 // PATCH /tracking_settings/subscription #
 
 $request_body = json_decode('{
-  "enabled": true, 
-  "html_content": "html content", 
-  "landing": "landing page html", 
-  "plain_content": "text content", 
-  "replace": "replacement tag", 
+  "enabled": true,
+  "html_content": "html content",
+  "landing": "landing page html",
+  "plain_content": "text content",
+  "replace": "replacement tag",
   "url": "url"
 }');
 

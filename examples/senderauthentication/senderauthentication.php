@@ -1,7 +1,7 @@
 <?php
 require 'vendor/autoload.php'; // If you're using Composer (recommended)
 // comment out the above line if not using Composer
-// require("./sendgrid-php.php"); 
+// require("./lib/loader.php");
 // If not using Composer, uncomment the above line
 
 
@@ -13,15 +13,15 @@ $sg = new \SendGrid($apiKey);
 // POST /whitelabel/domains #
 
 $request_body = json_decode('{
-  "automatic_security": false, 
-  "custom_spf": true, 
-  "default": true, 
-  "domain": "example.com", 
+  "automatic_security": false,
+  "custom_spf": true,
+  "default": true,
+  "domain": "example.com",
   "ips": [
-    "192.168.1.1", 
+    "192.168.1.1",
     "192.168.1.2"
-  ], 
-  "subdomain": "news", 
+  ],
+  "subdomain": "news",
   "username": "john@example.com"
 }');
 
@@ -93,7 +93,7 @@ try {
 // PATCH /whitelabel/domains/{domain_id} #
 
 $request_body = json_decode('{
-  "custom_spf": true, 
+  "custom_spf": true,
   "default": false
 }');
 $domain_id = "test_url_param";
@@ -209,8 +209,8 @@ try {
 // POST /whitelabel/ips #
 
 $request_body = json_decode('{
-  "domain": "example.com", 
-  "ip": "192.168.1.1", 
+  "domain": "example.com",
+  "ip": "192.168.1.1",
   "subdomain": "email"
 }');
 
@@ -288,8 +288,8 @@ try {
 // POST /whitelabel/links #
 
 $request_body = json_decode('{
-  "default": true, 
-  "domain": "example.com", 
+  "default": true,
+  "domain": "example.com",
   "subdomain": "mail"
 }');
 $query_params = json_decode('{"limit": 1, "offset": 1}');

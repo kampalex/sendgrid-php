@@ -1,7 +1,7 @@
 <?php
 require 'vendor/autoload.php'; // If you're using Composer (recommended)
 // comment out the above line if not using Composer
-// require("./sendgrid-php.php"); 
+// require("./lib/loader.php");
 // If not using Composer, uncomment the above line
 
 
@@ -15,7 +15,7 @@ $sg = new \SendGrid($apiKey);
 $query_params = json_decode('{"category": "test_string", "limit": 1, "offset": 1}');
 
 try {
-    $response = $sg->client->categories()->get(null, $query_params);    
+    $response = $sg->client->categories()->get(null, $query_params);
     print $response->statusCode() . "\n";
     print_r($response->headers());
     print $response->body() . "\n";
@@ -30,7 +30,7 @@ try {
 $query_params = json_decode('{"end_date": "2016-04-01", "aggregated_by": "day", "limit": 1, "offset": 1, "start_date": "2016-01-01", "categories": "test_string"}');
 
 try {
-    $response = $sg->client->categories()->stats()->get(null, $query_params);    
+    $response = $sg->client->categories()->stats()->get(null, $query_params);
     print $response->statusCode() . "\n";
     print_r($response->headers());
     print $response->body() . "\n";
@@ -45,7 +45,7 @@ try {
 $query_params = json_decode('{"end_date": "2016-04-01", "aggregated_by": "day", "limit": 1, "sort_by_metric": "test_string", "offset": 1, "start_date": "2016-01-01", "sort_by_direction": "asc"}');
 
 try {
-    $response = $sg->client->categories()->stats()->sums()->get(null, $query_params);    
+    $response = $sg->client->categories()->stats()->sums()->get(null, $query_params);
     print $response->statusCode() . "\n";
     print_r($response->headers());
     print $response->body() . "\n";

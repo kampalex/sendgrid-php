@@ -1,7 +1,7 @@
 <?php
 require 'vendor/autoload.php'; // If you're using Composer (recommended)
 // comment out the above line if not using Composer
-// require("./sendgrid-php.php"); 
+// require("./lib/loader.php");
 // If not using Composer, uncomment the above line
 
 
@@ -28,9 +28,9 @@ try {
 // DELETE /suppression/blocks #
 
 $request_body = json_decode('{
-  "delete_all": false, 
+  "delete_all": false,
   "emails": [
-    "example1@example.com", 
+    "example1@example.com",
     "example2@example.com"
   ]
 }');
@@ -94,9 +94,9 @@ try {
 // DELETE /suppression/bounces #
 
 $request_body = json_decode('{
-  "delete_all": true, 
+  "delete_all": true,
   "emails": [
-    "example@example.com", 
+    "example@example.com",
     "example2@example.com"
   ]
 }');
@@ -161,9 +161,9 @@ try {
 // DELETE /suppression/invalid_emails #
 
 $request_body = json_decode('{
-  "delete_all": false, 
+  "delete_all": false,
   "emails": [
-    "example1@example.com", 
+    "example1@example.com",
     "example2@example.com"
   ]
 }');
@@ -257,9 +257,9 @@ try {
 // DELETE /suppression/spam_reports #
 
 $request_body = json_decode('{
-  "delete_all": false, 
+  "delete_all": false,
   "emails": [
-    "example1@example.com", 
+    "example1@example.com",
     "example2@example.com"
   ]
 }');

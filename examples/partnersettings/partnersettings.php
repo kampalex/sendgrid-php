@@ -1,7 +1,7 @@
 <?php
 require 'vendor/autoload.php'; // If you're using Composer (recommended)
 // comment out the above line if not using Composer
-// require("./sendgrid-php.php"); 
+// require("./lib/loader.php");
 // If not using Composer, uncomment the above line
 
 
@@ -28,8 +28,8 @@ try {
 // PATCH /partner_settings/new_relic #
 
 $request_body = json_decode('{
-  "enable_subuser_statistics": true, 
-  "enabled": true, 
+  "enable_subuser_statistics": true,
+  "enabled": true,
   "license_key": ""
 }');
 

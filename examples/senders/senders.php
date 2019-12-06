@@ -1,7 +1,7 @@
 <?php
 require 'vendor/autoload.php'; // If you're using Composer (recommended)
 // comment out the above line if not using Composer
-// require("./sendgrid-php.php"); 
+// require("./lib/loader.php");
 // If not using Composer, uncomment the above line
 
 
@@ -13,20 +13,20 @@ $sg = new \SendGrid($apiKey);
 // POST /senders #
 
 $request_body = json_decode('{
-  "address": "123 Elm St.", 
-  "address_2": "Apt. 456", 
-  "city": "Denver", 
-  "country": "United States", 
+  "address": "123 Elm St.",
+  "address_2": "Apt. 456",
+  "city": "Denver",
+  "country": "United States",
   "from": {
-    "email": "from@example.com", 
+    "email": "from@example.com",
     "name": "Example INC"
-  }, 
-  "nickname": "My Sender ID", 
+  },
+  "nickname": "My Sender ID",
   "reply_to": {
-    "email": "replyto@example.com", 
+    "email": "replyto@example.com",
     "name": "Example INC"
-  }, 
-  "state": "Colorado", 
+  },
+  "state": "Colorado",
   "zip": "80202"
 }');
 
@@ -57,20 +57,20 @@ try {
 // PATCH /senders/{sender_id} #
 
 $request_body = json_decode('{
-  "address": "123 Elm St.", 
-  "address_2": "Apt. 456", 
-  "city": "Denver", 
-  "country": "United States", 
+  "address": "123 Elm St.",
+  "address_2": "Apt. 456",
+  "city": "Denver",
+  "country": "United States",
   "from": {
-    "email": "from@example.com", 
+    "email": "from@example.com",
     "name": "Example INC"
-  }, 
-  "nickname": "My Sender ID", 
+  },
+  "nickname": "My Sender ID",
   "reply_to": {
-    "email": "replyto@example.com", 
+    "email": "replyto@example.com",
     "name": "Example INC"
-  }, 
-  "state": "Colorado", 
+  },
+  "state": "Colorado",
   "zip": "80202"
 }');
 $sender_id = "test_url_param";

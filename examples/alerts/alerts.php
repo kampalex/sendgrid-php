@@ -1,7 +1,7 @@
 <?php
 require 'vendor/autoload.php'; // If you're using Composer (recommended)
 // comment out the above line if not using Composer
-// require("./sendgrid-php.php"); 
+// require("./lib/loader.php");
 // If not using Composer, uncomment the above line
 
 
@@ -13,8 +13,8 @@ $sg = new \SendGrid($apiKey);
 // POST /alerts #
 
 $request_body = json_decode('{
-  "email_to": "example@example.com", 
-  "frequency": "daily", 
+  "email_to": "example@example.com",
+  "frequency": "daily",
   "type": "stats_notification"
 }');
 
