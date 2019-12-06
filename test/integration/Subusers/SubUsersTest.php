@@ -1,6 +1,6 @@
 <?php
 
-namespace SendGrid\Tests\Integration\Subusers;
+namespace SendGrid\Tests\Subusers;
 
 use SendGrid\Tests\BaseTestClass;
 

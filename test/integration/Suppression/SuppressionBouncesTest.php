@@ -1,6 +1,6 @@
 <?php
 
-namespace SendGrid\Tests\Integration\Suppression;
+namespace SendGrid\Tests\Suppression;
 
 use SendGrid\Tests\BaseTestClass;
 

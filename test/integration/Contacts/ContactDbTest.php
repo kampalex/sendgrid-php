@@ -1,6 +1,6 @@
 <?php
 
-namespace SendGrid\Tests\Integration\Contacts;
+namespace SendGrid\Tests\Contacts;
 
 use SendGrid\Tests\BaseTestClass;
 

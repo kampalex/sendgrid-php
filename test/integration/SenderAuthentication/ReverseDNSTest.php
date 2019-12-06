@@ -1,10 +1,10 @@
 <?php
 
-namespace SendGrid\Tests\Integration\SenderAuthentication;
+namespace SendGrid\Tests\Whitelabel;
 
 use SendGrid\Tests\BaseTestClass;
 
-class ReverseDNSTest extends BaseTestClass
+class WhitelabelIpsTest extends BaseTestClass
 {
     public function testWhitelabelIpsPostMethod()
     {

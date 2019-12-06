@@ -1,6 +1,6 @@
 <?php
 
-namespace SendGrid\Tests\Integration\Asm;
+namespace SendGrid\Tests\Asm;
 
 use SendGrid\Tests\BaseTestClass;
 

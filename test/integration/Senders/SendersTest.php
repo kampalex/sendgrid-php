@@ -1,6 +1,6 @@
 <?php
 
-namespace SendGrid\Tests\Integration\Senders;
+namespace SendGrid\Tests\Senders;
 
 use SendGrid\Tests\BaseTestClass;
 

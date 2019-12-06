@@ -4,7 +4,7 @@
  *
  * PHP Version - 5.6, 7.0, 7.1, 7.2
  *
- * @package   SendGrid\Tests\Unit
+ * @package   SendGrid\Tests
  * @author    Elmer Thomas <dx@sendgrid.com>
  * @copyright 2018-19 Twilio SendGrid
  * @license   https://opensource.org/licenses/MIT The MIT License
@@ -12,17 +12,15 @@
  * @link      http://packagist.org/packages/sendgrid/sendgrid
  */
 
-namespace SendGrid\Tests\Unit;
-
-use SendGrid\Tests\BaseTestClass;
+namespace SendGrid\Tests;
 
 
 /**
  * This class tests the request object generation for a /mail/send API call
  *
- * @package SendGrid\Tests\Unit
+ * @package SendGrid\Tests
  */
-class SingleEmailToMultipleRecipientsTest extends BaseTestClass
+class SingleEmailToMulipleRecipientsTest extends BaseTestClass
 {
 
     private $REQUEST_OBJECT = <<<'JSON'
